@@ -4,12 +4,12 @@ var isStarted = true;
 var storedGameSequence = [];
 var userClickedSequence = [];
 
-$(document).keydown(function () {
+$("#play-btn").click(function () {
   if (isStarted === true) {
     setTimeout(() => {
       nextGameSequence();
     }, 300);
-
+    $(".pop-up").css("display", "none");
     isStarted = false;
   }
 });
@@ -58,7 +58,11 @@ function checkSequence(currentIndex) {
       }, 1000);
     }
   } else {
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    $("#level-title").text("Game Over");
+    $(".pop-up-message").text("Game Over");
+    $("#play-btn").text("Play Again");
+    $(".pop-up").css("display", "block");
+
     playSound("wrong");
     $("body").addClass("game-over");
 

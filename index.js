@@ -70,12 +70,9 @@ function checkSequence(currentIndex) {
       $("body").removeClass("game-over");
     }, 200);
 
-    startAgain();
+    // Setting parameters to start again
+    level = 0;
+    storedGameSequence = [];
+    isStarted = true;
   }
-}
-
-function startAgain() {
-  level = 0;
-  storedGameSequence = [];
-  isStarted = true;
 }
